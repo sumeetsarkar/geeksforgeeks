@@ -6,6 +6,7 @@ const g = 2; // group size
 let p = 0;
 let i = 0;
 let j = g - 1;
+// possible groups in arr for provided group size
 const possibleWholeGroups = parseInt(n/g);
 
 while (p < possibleWholeGroups) {

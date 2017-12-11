@@ -2,28 +2,34 @@ const arr = [];
 
 let size = arr.length;
 
+// arr check methods for existence of parent, left and right child
 function hasParent(i) { return parentIndex(i) >= 0; }
 function hasLeftChild(i) { return leftChildIndex(i) < size; }
 function hasRightChild(i) { return rightChildIndex(i) < size; }
 
+// arr value methods for parent, left and right child
 function parent(i) { return arr[parentIndex(i)]; }
 function leftChild(i) { return arr[leftChildIndex(i)]; }
 function rightChild(i) { return arr[rightChildIndex(i)]; }
 
+// arr index methods for parent, left and right child
 function parentIndex(i) { return parseInt((i - 1) / 2); }
 function leftChildIndex(i) { return parseInt(2 * i + 1); }
 function rightChildIndex(i) { return parseInt(2 * i + 2); }
 
+// generic swap method
 function swap(i, j) {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
 }
 
+// displays first item
 function peak() {
   return arr[0];
 }
 
+// removes first item and then heapifys down
 function poll() {
   const item = arr[0];
   arr[0] = arr[size - 1];
@@ -33,6 +39,7 @@ function poll() {
   return item;
 }
 
+// adds item to last and then heapifys up
 function add(item) {
   arr.push(item);
   size++;

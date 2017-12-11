@@ -1,3 +1,4 @@
+// traverse arr from eiter side increasing partition size +1 
 function findEquilibrium(arr) {
   let i = 1;
   let j = arr.length - 2;
@@ -18,12 +19,14 @@ function findEquilibrium(arr) {
   }
 }
 
+// calculates sum of array from both partitions and compares equality
 function checkSumEitherSides(arr, start, end, i) {
   let sumLeft = sum(arr, start, i);
   let sumRight = sum(arr, i + 1, end);
   return sumLeft === sumRight;
 }
 
+// computes sum or arr for given indexes
 function sum(arr, begin, end) {
   let sum = 0;
   for (let i = begin; i < end; i++) {
